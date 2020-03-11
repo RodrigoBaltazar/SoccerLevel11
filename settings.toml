@@ -1,0 +1,21 @@
+[default]
+DEBUG = false
+FLASK_ADMIN_NAME = "Soccer Level 11 Admin"
+FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
+FLASK_ADMIN_SWATCH = 'cerulean'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
+TITLE = "Soccer Level 11"
+SECRET_KEY = "jadkfbsdkjbfbhdsadas"
+PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
+EXTENSIONS = [
+    "soccerlevel11.ext.appearance:init_app",
+    #"soccerlevel11.ext.database:init_app",
+    #"soccerlevel11.ext.auth:init_app",
+    #"soccerlevel11.ext.admin:init_app",
+    #"soccerlevel11.ext.commands:init_app",
+    #"soccerlevel11.blueprints.webui:init_app",
+    #"soccerlevel11.blueprints.restapi:init_app",
+]
+
+[production]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///production.db'
