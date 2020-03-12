@@ -6,7 +6,13 @@
 <div class="jumbotron">
 <h2>{{ video.name }}</h2>
 <p>
-    {{video.description}}
+
+    <ul>
+        <li>Descrição:{{video.description}}</li>
+        <li>Data Postagem: {{video.post_date}}</li>
+        <li>Nota: {{video.rating}}</li>
+        <li>Tamanho Video: {{video.size}}</li>
+    </ul>
 </p>
 </div>
 </div>
