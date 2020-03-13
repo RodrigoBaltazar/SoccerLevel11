@@ -5,13 +5,19 @@
 
 
         {% for video in videos %}
-        <div class="jumbotron">
-            <ul class="list-group">
-        <li class="list-group-item">
-            <a href="{{url_for('webui.videoview', video_id=video.id)}}">{{video.name}}- {{video.description}}</a>
-        </li>
-    </ul>
-</div>
+    <div class="jumbotron">
+        <ul class="list-group">
+            <li>
+                {{ video.rating }} - {{ video.post_date }}
+            </li>
+            <li class="list-group-item">
+                <a href="{{url_for('webui.videoview', video_id=video.id)}}">{{video.description}}</a>
+            </li>
+            <li>
+                <button type="button" class="btn btn-default btn-group-lg">Copy Link</button>
+            </li>
+        </ul>
+    </div>
         {% endfor %}
     
 
