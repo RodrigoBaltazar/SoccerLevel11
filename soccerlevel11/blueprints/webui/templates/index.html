@@ -1,48 +1,19 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}{{config.get('TITLE')}}{% endblock %}
-
-{% block navbar %}
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          <img alt="Brand" src="static/banner.png" width="400 px" height="60 px">
-        </a>
-           
-    </div>
-    
-    <div class="navbar-text navbar-right"
-            <p class="">
-                <a href="/submit">
-                    <button type="button" class="btn btn-success navbar-btn">Submit a Video</button>
-                </a>
-            </p>
-        </div> 
-    </div>
-  </nav>
-<!-- <div class="navbar">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-        <img alt="Banner" src="static/banner.png" width="400 px" height="60 px">
-        </a>
-        
-    </div>
-</div> -->
-{% endblock %}
+{% extends "customNavbar.html" %}
 
 {% block content %}
 <div class="container">
-<h1>{{config.get('TITLE')}}</h1>
 
-<div class="jumbotron">
-<ul class="list-group">
-    {% for video in videos %}
-    <li class="list-group-item">
-        <a href="{{url_for('webui.videoview', video_id=video.id)}}">{{video.name}}- {{video.description}}</a>
-    </li>
-    {% endfor %}
-</ul>
+
+        {% for video in videos %}
+        <div class="jumbotron">
+            <ul class="list-group">
+        <li class="list-group-item">
+            <a href="{{url_for('webui.videoview', video_id=video.id)}}">{{video.name}}- {{video.description}}</a>
+        </li>
+    </ul>
 </div>
+        {% endfor %}
+    
 
 </div>
 {% endblock %}

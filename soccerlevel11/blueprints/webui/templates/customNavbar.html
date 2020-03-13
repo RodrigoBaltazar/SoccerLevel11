@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{config.get('TITLE')}}{% endblock %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Soccer Level 11" src="static/banner.png" width="400 px" height="60 px">
+        </a>
+           
+    </div>
+    
+    <div class="navbar-text navbar-right"
+            <p>
+                <a href="/submit">
+                    <button type="button" class="btn btn-success navbar-btn btn-lg">
+                        <span class=" glyphicon glyphicon-plus"></span> Submit a Video
+                    </button>
+                </a>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="/admin">
+                        <button type="button" class="btn btn-default">Login</button>
+                    </a>
+                  </div>
+            </p>
+        </div> 
+    </div>
+  </nav>
+{% endblock %}
+
