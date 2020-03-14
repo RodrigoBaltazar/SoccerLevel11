@@ -9,7 +9,8 @@ class Video(db.Model, SerializerMixin):
     post_date = db.Column(db.DateTime())
     rating = db.Column(db.Integer)
     size = db.Column(db.Integer)
-    #file = db.Column()
+    filepath = db.Column(db.String(200))
+    approved = db.Column(db.Boolean)
 
 class User(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)

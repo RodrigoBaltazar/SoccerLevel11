@@ -13,11 +13,10 @@ AdminIndexView._handle_view = login_required(AdminIndexView._handle_view)
 sqla.ModelView._handle_view = login_required(sqla.ModelView._handle_view)
 
 
-class MyHomeView(AdminIndexView):
+class DashBoard(AdminIndexView):
     @expose('/')
     def index(self):
-        arg1 = 'Hello'
-        return self.render('admin/dashboard.html', arg1=arg1)
+        return self.render('admin/dashboard.html')
 
 class UserAdmin(sqla.ModelView):
     column_list = ['username']
@@ -27,10 +26,11 @@ class UserAdmin(sqla.ModelView):
         model.password = generate_password_hash(model.password)
 
 
-admin = Admin(index_view=MyHomeView(name='DashBoard'))
+admin = Admin(index_view=DashBoard(name='DashBoard'))
 
 def init_app(app):
     admin.name = app.config.TITLE
+    admin.url = '/'
     admin.template_mode = "bootstrap3"
     admin.add_view(sqla.ModelView(Video, db.session))
     admin.add_view(UserAdmin(User, db.session, name='Users'))
