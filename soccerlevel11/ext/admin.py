@@ -25,7 +25,6 @@ class UserAdmin(sqla.ModelView):
     def on_model_change(self, form, model, is_created):
         model.password = generate_password_hash(model.password)
 
-
 admin = Admin(index_view=DashBoard(name='DashBoard'))
 
 def init_app(app):
